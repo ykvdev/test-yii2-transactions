@@ -5,7 +5,7 @@
 1. Go to your server projects directory.
 1. Clone this project from repository: `git clone https://bitbucket.org/atoumus/test_starkkraft.git && cd ./test_starkkraft`.
 1. Install composer deps: `composer install`.
-1. Load MySQL dump: `mysql -u username -p password test_starkkraft < ./test_starkkraft.sql`.
+1. Load MySQL dump: `mysql -u username -p password < ./test_starkkraft.sql`.
 1. Run PHP built-in server: `./yii serve 0.0.0.0 -p 8000`.
 1. Go to: http://{your-ip-address}:8000 in browser.
 
