@@ -5,9 +5,12 @@ $db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'test_starkkraft',
-    'language' => 'ru',
+    'name' => 'Starkkraft',
+    'language' => 'ru-RU',
+    'sourceLanguage' => 'en-US',
     'timeZone' => 'Europe/Moscow',
     'basePath' => dirname(__DIR__),
+    'defaultRoute' => '/data',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',

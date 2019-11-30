@@ -47,10 +47,55 @@ class Data extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'card_number' => 'Номер карты',
-            'date' => 'Дата',
+            'date' => 'Дата/время',
             'volume' => 'Сумма',
             'service' => 'Сервис',
             'address_id' => 'Адрес ID',
         ];
+    }
+
+    /**
+     * @return array
+     */
+    public static function getAvailableYears()
+    {
+        $years = static::find()
+            ->distinct()
+            ->select(['y' => 'YEAR(`date`)'])
+            ->orderBy(['y' => SORT_DESC])
+            ->asArray()
+            ->column();
+
+        foreach ($years as $k => $y) {
+            $years[$y] = $y;
+            unset($years[$k]);
+        }
+
+        return $years;
+    }
+
+    /**
+     * @return array
+     */
+    public static function getYearMonthStats()
+    {
+        $stats = static::find()
+            ->distinct()
+            ->select(['y' => 'YEAR(`date`)', 'm' => 'MONTH(`date`)', 'c' => 'COUNT(`id`)'])
+            ->groupBy(['y', 'm'])
+            ->orderBy(['y' => SORT_DESC, 'm' => SORT_DESC])
+            ->asArray()
+            ->all();
+
+        foreach ($stats as $k => $item) {
+            $stats[$item['y']]['count'] = $stats[$item['y']]['count'] ?? 0;
+            $stats[$item['y']]['count'] += $item['c'];
+
+            $stats[$item['y']]['months'][$item['m']] = $item['c'];
+
+            unset($stats[$k]);
+        }
+
+        return $stats;
     }
 }
