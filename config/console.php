@@ -23,6 +23,12 @@ $config = [
                     'class' => 'yii\log\FileTarget',
                     'levels' => ['error', 'warning'],
                 ],
+                [
+                    'class' => 'yii\log\FileTarget',
+                    'categories' => ['transactions_normalize'],
+                    'logFile' => '@runtime/logs/transactions_normalize.log',
+                    'logVars' => []
+                ],
             ],
         ],
         'db' => $db,
