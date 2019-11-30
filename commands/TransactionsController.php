@@ -27,19 +27,10 @@ class TransactionsController extends Controller
 
     public function actionNormalize()
     {
-        /** @var Data[] $backs */
-        $backs = Data::find()->where(['>', 'volume', 0])->limit($this->limit)->all();
+        $backs = Data::getBacks($this->limit);
         $this->info('Find ' . count($backs) . ' backs');
         foreach ($backs as $back) {
-            /** @var Data $transaction */
-            $transaction = Data::find()
-                ->where(['card_number' => $back->card_number])
-                ->andWhere(['address_id' => $back->address_id])
-                ->andWhere(['<=', 'date', $back->date])
-                ->andWhere(['!=', 'id', $back->id])
-                ->orderBy(['date' => SORT_DESC])
-                ->limit(1)
-                ->one();
+            $transaction = Data::getTransactionForBack($back);
             if(!$transaction) {
                 $this->warn("Transaction for back id:{$back->id} not found");
                 continue;

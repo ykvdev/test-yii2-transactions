@@ -98,4 +98,38 @@ class Data extends \yii\db\ActiveRecord
 
         return $stats;
     }
+
+    /**
+     * @param int $limit
+     *
+     * @return self[]
+     */
+    public static function getBacks($limit)
+    {
+        $backs = Data::find()->where(['>', 'volume', 0])->limit($limit)->all();
+
+        return $backs;
+    }
+
+    /**
+     * @param Data $back
+     *
+     * @return Data|null
+     */
+    public static function getTransactionForBack(Data $back)
+    {
+        /** @var Data $transaction */
+        $transaction = Data::find()
+            ->where(['card_number' => $back->card_number])
+            ->andWhere(['address_id' => $back->address_id])
+            ->andWhere(['<=', 'date', $back->date])
+            ->andWhere(['!=', 'id', $back->id])
+            ->orderBy(['date' => SORT_DESC])
+            ->limit(1)
+            ->one();
+
+        $transaction = $transaction && $transaction->volume < 0 ? $transaction : null;
+
+        return $transaction;
+    }
 }

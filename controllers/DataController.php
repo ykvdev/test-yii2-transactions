@@ -6,10 +6,7 @@ use app\Helpers;
 use Yii;
 use app\models\Data;
 use app\models\DataSearch;
-use yii\helpers\ArrayHelper;
 use yii\web\Controller;
-use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 class DataController extends Controller
 {
