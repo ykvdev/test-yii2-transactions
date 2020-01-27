@@ -24,3 +24,7 @@ Usage examples:
 ```
 
 After running above commands, see the log: `runtime/logs/transactions_normalize.log`.
+
+## Task Description
+
+[Download task description](./Task.docx)
