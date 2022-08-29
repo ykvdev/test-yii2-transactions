@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
--- Дамп структуры базы данных test_starkkraft
-CREATE DATABASE IF NOT EXISTS `test_starkkraft` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `test_starkkraft`;
+-- Дамп структуры базы данных yii2_test_transactions
+CREATE DATABASE IF NOT EXISTS `yii2_test_transactions` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `yii2_test_transactions`;
 
--- Дамп структуры для таблица test_starkkraft.data
+-- Дамп структуры для таблица yii2_test_transactions.data
 CREATE TABLE IF NOT EXISTS `data` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `card_number` varchar(20) DEFAULT NULL,
@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS `data` (
   KEY `data:date` (`date`)
 ) ENGINE=InnoDB AUTO_INCREMENT=31894 DEFAULT CHARSET=utf8;
 
--- Дамп данных таблицы test_starkkraft.data: ~5 096 rows (приблизительно)
+-- Дамп данных таблицы yii2_test_transactions.data: ~5 096 rows (приблизительно)
 /*!40000 ALTER TABLE `data` DISABLE KEYS */;
 INSERT INTO `data` (`id`, `card_number`, `date`, `volume`, `service`, `address_id`) VALUES
 	(21511, '257471800', '2015-04-10 08:51:11', -40, '95Премиум', 11),

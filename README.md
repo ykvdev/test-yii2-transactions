@@ -1,11 +1,11 @@
-# Starkkraft Test Task
+# Yii2 Transactions Test Task
 
 ## Install
 
 1. Go to your server projects directory.
-1. Clone this project from repository: `git clone https://bitbucket.org/atoumus/test_starkkraft_transactions.git && cd ./test_starkkraft_transactions`.
+1. Clone this project from repository: `git clone https://bitbucket.org/atoumus/yii2_test_transactions.git && cd ./yii2_test_transactions`.
 1. Install composer deps: `composer install`.
-1. Load MySQL dump: `mysql -u username -p password < ./test_starkkraft.sql`.
+1. Load MySQL dump: `mysql -u username -p password < ./yii2_test_transactions.sql`.
 1. Run PHP built-in server: `./yii serve 0.0.0.0 -p 8000`.
 1. Go to: http://{your-ip-address}:8000 in browser.
 

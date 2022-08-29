@@ -4,8 +4,8 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'test_starkkraft',
-    'name' => 'Starkkraft',
+    'id' => 'yii2_test_transactions',
+    'name' => 'Yii2 Transactions Test Task',
     'language' => 'ru-RU',
     'sourceLanguage' => 'en-US',
     'timeZone' => 'Europe/Moscow',
