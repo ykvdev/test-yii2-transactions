@@ -3,7 +3,7 @@
 ## Install
 
 1. Go to your server projects directory.
-1. Clone this project from repository: `git clone https://bitbucket.org/atoumus/yii2_test_transactions.git && cd ./yii2_test_transactions`.
+1. Clone this project from repository: `git clone git@github.com:ykvdev/test-yii2-transactions.git && cd ./test-yii2-transactions`.
 1. Install composer deps: `composer install`.
 1. Load MySQL dump: `mysql -u username -p password < ./yii2_test_transactions.sql`.
 1. Run PHP built-in server: `./yii serve 0.0.0.0 -p 8000`.
